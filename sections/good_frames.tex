@@ -1,0 +1,27 @@
+
+\begin{frame}{Change the climate, hold buildings fixed}
+  \centering
+  \begin{tikzpicture}[
+      period/.style={draw=accent1,thick,rounded corners=2pt,fill=softgrey,
+        minimum width=3.4cm,minimum height=1.45cm,text width=3.0cm,align=center},
+      future/.style={draw=riskred,thick,rounded corners=2pt,fill=white,
+        minimum width=3.4cm,minimum height=1.45cm,text width=3.0cm,align=center},
+      arrow/.style={-{Latex[length=3mm]},thick,color=accent1}
+    ]
+    \node[period] (base) at (-4.3,0) {\textbf{Reference}\\1991--2020};
+    \node[future] (mid) at (0,0) {\textbf{Mid-century}\\2041--2070};
+    \node[future] (late) at (4.3,0) {\textbf{Late century}\\2071--2100};
+    \draw[arrow] (base) -- (mid);
+    \draw[arrow] (mid) -- (late);
+    \node[below=0.5cm of base,align=center] {Same portfolio\\and 2026 prices};
+    \node[below=0.5cm of mid,align=center] {RCP2.6\\RCP4.5\\SSP3-7.0};
+    \node[below=0.5cm of late,align=center] {RCP2.6\\RCP4.5\\SSP3-7.0};
+  \end{tikzpicture}
+
+  \vspace{0.45cm}
+  \textbf{10 climate simulations $\times$ 2 bias adjustments $\times$ 10 damage simulations}
+
+  \vspace{0.15cm}
+  = 200 relative cost changes per scenario, horizon and geography
+  \sourceNote{Norwegian Climate Service Centre projections released in 2025}
+\end{frame}

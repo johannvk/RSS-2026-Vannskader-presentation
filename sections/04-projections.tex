@@ -1,0 +1,166 @@
+% Slides 13--17: climate experiment, national and regional results, caveats.
+
+% \begin{frame}{Change the climate, hold buildings fixed}
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.52\textwidth}
+%       \begin{itemize}
+%         \item Compare two future 30-year periods with the 1991--2020
+%           reference period
+%         \item Use low, intermediate and high emissions scenarios
+%         \item Keep today's building portfolio, deductibles and 2026
+%           price level fixed
+%         \item Isolate the effect of changes in precipitation
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.43\textwidth}
+%       \textbf{Periods and scenarios}
+%       \begin{itemize}
+%         \item 1991--2020: reference
+%         \item 2041--2070: three scenarios
+%         \item 2071--2100: three scenarios
+%         \item RCP2.6, RCP4.5 and SSP3-7.0
+%       \end{itemize}
+%       \vspace{0.45cm}
+%       \textbf{Projection ensemble}
+%       \begin{itemize}
+%         \item 10 climate simulations $\times$ 2 bias adjustments
+%         \item 10 damage simulations
+%         \item 200 relative changes in total
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+%   \sourceNote{Norwegian Climate Service Centre projections released in 2025}
+% \end{frame}
+\begin{frame}{Change the climate, hold buildings fixed}
+  \vspace{0.5cm}
+  \centering
+  \begin{tikzpicture}[
+      period/.style={draw=accent1,thick,rounded corners=2pt,fill=softgrey,
+      minimum width=3.4cm,minimum height=1.45cm,text width=3.0cm,align=center},
+      future/.style={draw=riskred,thick,rounded corners=2pt,fill=white,
+      minimum width=3.4cm,minimum height=1.45cm,text width=3.0cm,align=center},
+      arrow/.style={-{Latex[length=3mm]},thick,color=accent1}
+    ]
+    \node[period] (base) at (-4.3,0) {\textbf{Reference}\\1991--2020};
+    \node[future] (mid) at (0,0) {\textbf{Mid-century}\\2041--2070};
+    \node[future] (late) at (4.3,0) {\textbf{Late century}\\2071--2100};
+    \draw[arrow] (base) -- (mid);
+    \draw[arrow] (mid) -- (late);
+    \node[below=0.5cm of base,align=center] {Same portfolio\\and 2026 prices};
+    \node[below=0.5cm of mid,align=center] {RCP2.6\\RCP4.5\\SSP3-7.0};
+    \node[below=0.5cm of late,align=center] {RCP2.6\\RCP4.5\\SSP3-7.0};
+  \end{tikzpicture}
+
+  \vspace{0.45cm}
+  \textbf{10 climate simulations $\times$ 2 bias adjustments $\times$
+  10 damage simulations}
+
+  \vspace{0.15cm}
+  = 200 relative cost changes per scenario, horizon, and geography
+  \sourceNote{Norwegian Climate Service Centre projections released in 2025}
+\end{frame}
+
+\begin{frame}{National costs rise in every scenario}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.40\textwidth}
+      \begin{itemize}
+        \item Median changes are positive for every scenario, and horizon
+        \item Increases are larger under higher emissions
+        \item Scenario differences are most pronounced late in the century
+        \item Under high emissions, the late-century median is about
+          one third above the reference climate
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.57\textwidth}
+      \centering
+      \scriptsize
+      \renewcommand{\arraystretch}{1.35}
+      \begin{tabular}{lrr}
+        \textbf{Scenario} & \textbf{2041--2070} & \textbf{2071--2100} \\
+        \hline
+        Low -- RCP2.6 & $+9.5\%$ & $+9.9\%$ \\
+        Intermediate -- RCP4.5 & $+14.9\%$ & $+23.4\%$ \\
+        High -- SSP3-7.0 & $+18.3\%$ & $\mathbf{+33.2\%}$
+      \end{tabular}
+
+      \vspace{0.45cm}
+      Medians of 200 relative cost changes
+    \end{column}
+  \end{columns}
+  \sourceNote{Reference period 1991--2020}
+\end{frame}
+
+\begin{frame}{Emissions matter most late in the century}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item Scenario medians are closer at mid-century
+        \item They diverge substantially by 2071--2100
+        \item Climate-model differences dominate much of the ensemble spread
+        \item Ensemble quantiles are not calibrated probabilities
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \textbf{High emissions, 2071--2100}
+
+      \vspace{0.25cm}
+      \begin{tabular}{lr}
+        10th percentile & $+10.1\%$ \\
+        Lower quartile & $+17.0\%$ \\
+        Median & $+33.2\%$ \\
+        Upper quartile & $+41.6\%$ \\
+        90th percentile & $+46.8\%$
+      \end{tabular}
+    \end{column}
+  \end{columns}
+  \sourceNote{National projection ensemble}
+\end{frame}
+
+\begin{frame}{The increase is geographically uneven}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item High-emissions county medians:
+          \begin{itemize}
+            \item 2041--2070: ca.\ $+8$ to $+25\%$
+            \item 2071--2100: ca.\ $+17$ to $+61\%$
+          \end{itemize}
+        \item Largest increases in Finnmark and southern mountain regions
+        \item Lower increases in much of Western Norway
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      % Replace with an English-labelled county figure using the same filename.
+      \includegraphics[page=6,width=\linewidth,height=0.65\textheight,keepaspectratio]{images/county-projections.pdf}
+    \end{column}
+  \end{columns}
+  \sourceNote{County medians; high-emissions scenario}
+\end{frame}
+
+\begin{frame}{What the ratios do and do not say}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item \textbf{Relative, not absolute:} Gjensidige's portfolio
+          does not cover all Norwegian buildings
+        \item \textbf{Fixed portfolio:} no future construction,
+          demolition or adaptation
+        \item \textbf{Conservative extrapolation:} precipitation
+          effects are capped at the historical training range
+        \item \textbf{Uneven robustness:} national and county medians
+          are stronger than municipality tail estimates
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \textbf{Effective ensemble size}
+      \begin{itemize}
+        \item Ten damage simulations based on the same climate
+          projection tend to cluster
+        \item The 200 ratios are therefore not 200 independent climate futures
+        \item Tail quantiles should be used cautiously, especially
+          for municipalities
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \sourceNote{Model assumptions and projection caveats}
+\end{frame}
