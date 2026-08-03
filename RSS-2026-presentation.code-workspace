@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Vann-Ekspertutvalg-GJ-rapport-1"
+		}
+	],
+	"settings": {
+		"latex-workshop.view.pdf.viewer": "tab",
+		"latex-workshop.docker.enabled": true,
+		"latex-workshop.docker.image.latex": "maxkratz/texlive:2019",
+		"latex-workshop.view.outline.sync.viewer": true,
+		"latex-workshop.docker.path": "podman",
+		"latex-workshop.hover.command.enabled": false,
+		"latex-workshop.hover.citation.enabled": false,
+		"latex-workshop.hover.preview.enabled": false,
+		"latex-workshop.hover.ref.enabled": false,
+		"latex-workshop.intellisense.atSuggestion.trigger.latex": "''"
+	}
+}

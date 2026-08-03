@@ -1,0 +1,25 @@
+{
+    //// LateX Workshop settings:
+    // "editor.formatOnSave": true,
+    // "editor.wordWrap": "on",
+    "latex-workshop.latex.outDir": "./build",
+    "latex-workshop.view.pdf.viewer": "tab",
+
+    // TexLive 2024 image:
+    "latex-workshop.docker.enabled": true,
+    // En av de nyeste TexLive-versjonene:
+    // "latex-workshop.docker.image.latex": "ghcr.io/xu-cheng/texlive-full",
+    // Kompatibelt med NR notatmal:
+    "latex-workshop.docker.image.latex": "maxkratz/texlive:2019",
+    // Gir ikke ut bilde på forsiden:
+    // "latex-workshop.docker.image.latex": "maxkratz/texlive:2020",
+    "latex-workshop.view.outline.sync.viewer": true,
+    "latex-workshop.docker.path": "podman",
+    "latex-workshop.hover.command.enabled": false,
+    "latex-workshop.hover.citation.enabled": false,
+    "latex-workshop.hover.preview.enabled": false,
+    "latex-workshop.hover.ref.enabled": false,
+    "latex-workshop.intellisense.atSuggestion.trigger.latex": "''",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.rootFile.useSubFile": true,
+}

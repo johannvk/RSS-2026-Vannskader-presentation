@@ -7,12 +7,13 @@
 \usepackage{tikz}
 \usepackage{paralist}
 \usepackage{caption}
+\usepackage[british]{babel}
 
 
 % Use the same font as the Powerpoint template. To get better
 % consistency with math, consider using Fira Math with LuaTeX (allows
 % using OpenType fonts) see https://tex.stackexchange.com/a/473646
-\usepackage{roboto}  
+\usepackage{roboto}
 
 
 \setbeamertemplate{navigation symbols}{}
@@ -79,32 +80,32 @@
   \usebackgroundtemplate{\includegraphics[width=1\paperwidth]{backgrounds/nr1.pdf}}
   \begin{frame}
     \vspace{2cm}
-    \Large \textbf {Tittel her} \\
+    \Large \textbf {Title here} \\
     \vspace{1cm}
-    \normalsize Forfatter X, Norsk Regnesentral\\
+    \normalsize Johannes Voll Kolstø, \\ \small Norwegian Computing Central\\
     \vspace{2cm}
-    \small dato her
+    \small \today
   \end{frame}
 }
 
 \usebackgroundtemplate{\includegraphics[width=1\paperwidth]{backgrounds/nr2.pdf}}
 
-\begin{frame}{Tittel lysbilde  med tekst}
+\begin{frame}{Slide title with text}
   \begin{itemize}
-  \item Tekst nivå 1
+  \item Text level 1
     \begin{itemize}
-    \item Tekst nivå 2
+    \item Text level 2
       \begin{itemize}
-      \item Tekst nivå 3
+      \item Text level 3
       \end{itemize}  
     \end{itemize}  
   \end{itemize}
 \end{frame}  
 
 
-\begin{frame}{Tittel lysbilde med tekst og formel}
+\begin{frame}{Slide title with text and formula}
   \begin{itemize}
-  \item Tekst nivå 1
+  \item Text level 1
   \end{itemize}
   \begin{align*} 
     E &= m \cdot c^2\\
@@ -115,7 +116,7 @@
 \end{frame}  
 
 
-\begin{frame}{Figur xxx}
+\begin{frame}{Figure xxx}
   \vspace{-0.5cm}
   \begin{center}
     \hspace{8cm}
@@ -125,7 +126,7 @@
 
 
 
-\begin{frame}{Figur yyy}
+\begin{frame}{Figure yyy}
   \begin{flushleft}
     \raisebox{0pt}[0pt][0pt]{\makebox[0pt][c]{\raisebox{-25ex}{
           \makebox[\linewidth]{\includegraphics[type=pdf,ext=.pdf,read=.pdf,
@@ -137,7 +138,7 @@
 
 % Final slide
 \usebackgroundtemplate{\includegraphics[width=1\paperwidth]{backgrounds/nr3.pdf}}
-\begin{frame}{Takk for oppmerksomheten!}
+\begin{frame}{Thank you for your attention!}
   \begin{center}
     \includegraphics[width=0.60\linewidth,angle=0]{images/FishFarmAndreyArmyagov}
   \end{center}
