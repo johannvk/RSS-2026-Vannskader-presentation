@@ -386,7 +386,7 @@ If both panels are too dense, reveal frequency first and severity second on the 
 - Largest increases: Finnmark and parts of Southern Norway's mountain regions
 - Lower increases: much of Western Norway
 
-**Visual:** Use page 6 of [county damage changes](../Vann-Ekspertutvalg-GJ-rapport-1/fig/data/fylkesendringer_totalt_skadebelop.pdf) if the filename is available without Norwegian characters in the production environment; otherwise copy the current report asset and give the presentation copy an ASCII filename. Translate all labels. Prefer county results in the main deck and move municipality maps to the appendix.
+**Visual:** Use page 6 of [county damage changes](../Vann-Ekspertutvalg-GJ-rapport-1/fig/data/fylkesendringer_totalt_skadebeløp.pdf). Copy the report asset into the presentation with an ASCII filename before LaTeX implementation. Translate all labels. Prefer county results in the main deck and move municipality maps to the appendix.
 
 **Speaker note:** Aggregating more buildings reduces variability, so county medians are more robust than municipality tails. Finnmark's result is consistent with KSS projections of a large increase in very heavy precipitation.
 
@@ -408,7 +408,7 @@ If both panels are too dense, reveal frequency first and severity second on the 
 - **Conservative extrapolation:** precipitation effects are capped at the historical training range
 - **Uneven robustness:** national and county medians are stronger than municipality tail estimates
 
-**Visual:** Four compact statements with distinct icons. Optionally include a small crop from [county variability](../Vann-Ekspertutvalg-GJ-rapport-1/fig/data/fylkesvariabilitet_totalt_skadebelop.pdf) only if it remains readable.
+**Visual:** Four compact statements with distinct icons. Optionally include a small crop from [county variability](../Vann-Ekspertutvalg-GJ-rapport-1/fig/data/fylkesvariabilitet_totalt_skadebeløp.pdf) only if it remains readable.
 
 **Speaker note:** The 200 ratios do not behave like 200 independent climate futures. Ten damage simulations based on the same climate projection cluster closely, so the effective information in the tails is much smaller.
 
