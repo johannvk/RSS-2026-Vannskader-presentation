@@ -1,0 +1,14 @@
+[workspace]
+authors = ["johannvk <jvkolsto@nr.no>"]
+channels = ["conda-forge"]
+name = "py-scripts"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+check-claim-simulations = "python split_claim_simulations.py --dry-run"
+split-claim-simulations = "python split_claim_simulations.py"
+
+[dependencies]
+python = "3.13.*"
+pypdf = ">=6.14.2,<7"
