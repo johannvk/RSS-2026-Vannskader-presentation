@@ -22,4 +22,5 @@
     "latex-workshop.intellisense.atSuggestion.trigger.latex": "''",
     "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.latex.rootFile.useSubFile": true,
+    "python-envs.defaultEnvManager": "ms-python.python:system",
 }

@@ -1,4 +1,8 @@
-"""Split configured claim-simulation PDFs into single-page PDF files."""
+"""Split configured claim-simulation PDFs into single-page PDF files.
+
+Every resulting figure PDF is also rendered to a high-resolution PNG in a
+parallel ``png_claim_simulations`` folder.
+"""
 
 from __future__ import annotations
 
@@ -6,10 +10,13 @@ import argparse
 from collections.abc import Sequence
 from pathlib import Path
 
+import pymupdf
 from pypdf import PdfReader, PdfWriter
 
 
 PDF_DIRECTORY = Path(__file__).resolve().parent.parent / "images" / "claim_simulations"
+PNG_DIRECTORY = PDF_DIRECTORY.parent / "png_claim_simulations"
+PNG_DPI = 300
 
 # Add or remove filenames in these two lists as the source figures change.
 CLIMATE_SCENARIO_FILES = [
@@ -43,6 +50,22 @@ SCENARIO_HORIZON_SUFFIXES = (
 
 def output_paths(source: Path, suffixes: Sequence[str]) -> list[Path]:
     return [source.with_name(f"{source.stem}_{suffix}.pdf") for suffix in suffixes]
+
+
+def png_output_path(pdf: Path) -> Path:
+    return PNG_DIRECTORY / f"{pdf.stem}.png"
+
+
+def figure_pdfs(configured_files: Sequence[tuple[Path, Sequence[str]]]) -> list[Path]:
+    """All single-page figure PDFs: split outputs plus unsplit PDFs in the folder."""
+    sources = {source for source, _ in configured_files}
+    split_outputs = {
+        output
+        for source, suffixes in configured_files
+        for output in output_paths(source, suffixes)
+    }
+    existing = set(PDF_DIRECTORY.glob("*.pdf")) - sources
+    return sorted(existing | split_outputs)
 
 
 def validate_configuration(
@@ -83,6 +106,14 @@ def validate_configuration(
 
             configured_files.append((source, suffixes))
 
+    for figure in figure_pdfs(configured_files):
+        png_output = png_output_path(figure)
+        if png_output.exists() and not overwrite:
+            raise ValueError(
+                f"Output already exists: {png_output}\n"
+                "Run with --overwrite to replace generated files."
+            )
+
     return configured_files
 
 
@@ -94,6 +125,13 @@ def split_pdf(source: Path, suffixes: Sequence[str]) -> None:
         with output.open("wb") as output_file:
             writer.write(output_file)
         print(f"Created {output.relative_to(PDF_DIRECTORY.parent.parent)}")
+
+
+def convert_to_png(figure: Path, *, dpi: int = PNG_DPI) -> None:
+    output = png_output_path(figure)
+    with pymupdf.open(figure) as document:
+        document[0].get_pixmap(dpi=dpi).save(output)
+    print(f"Created {output.relative_to(PDF_DIRECTORY.parent.parent)}")
 
 
 def parse_args() -> argparse.Namespace:
@@ -125,15 +163,24 @@ def main() -> None:
     except ValueError as error:
         raise SystemExit(f"Configuration error: {error}") from error
 
+    figures = figure_pdfs(configured_files)
+
     if args.dry_run:
         for source, suffixes in configured_files:
             for output in output_paths(source, suffixes):
                 print(f"Would create {output.relative_to(PDF_DIRECTORY.parent.parent)}")
+        for figure in figures:
+            png_output = png_output_path(figure)
+            print(f"Would create {png_output.relative_to(PDF_DIRECTORY.parent.parent)}")
         print(f"Validated {len(configured_files)} source PDFs.")
         return
 
     for source, suffixes in configured_files:
         split_pdf(source, suffixes)
+
+    PNG_DIRECTORY.mkdir(exist_ok=True)
+    for figure in figures:
+        convert_to_png(figure)
 
 
 if __name__ == "__main__":
