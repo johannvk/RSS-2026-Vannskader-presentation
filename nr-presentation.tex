@@ -41,11 +41,11 @@
 \DefineNamedColor{named}{softgrey}{rgb}{0.94,0.94,0.94}
 
 \newcommand{\sourceNote}[1]{%
-  \vfill\hfill{\fontsize{6.5}{7.5}\selectfont\color{gray}Source: #1}%
+  \vfill\hfill{\tiny\color{gray}Source: #1}%
 }
 
 \newcommand{\plainNote}[1]{%
-  \vfill\hfill{\fontsize{6.5}{7.5}\selectfont\color{gray}#1}%
+  \vfill\hfill{\tiny\color{gray}#1}%
 }
 
 \setbeamertemplate{frametitle}{\vspace*{0.8cm}\hspace*{0cm}\insertframetitle}
@@ -118,7 +118,9 @@
 \footnotesize
 
 \input{sections/01-context}
-\input{sections/02-data-and-model}
+\input{sections/02-A-data}
+\input{sections/02-B-model-structure}
+\input{sections/02-C-fitted-effects}
 \input{sections/03-validation}
 \input{sections/04-projections}
 \input{sections/05-conclusions}

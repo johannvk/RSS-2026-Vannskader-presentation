@@ -1,0 +1,54 @@
+% Appendix: detailed claim-incidence model structure.
+
+\begin{frame}{Claim frequency model structure:}
+  %   \vspace{0.0cm}
+  $N_{iQ}$: number of claims on contract $i$ in year-season $Q$;
+  $l_{iQ}$: insured days that season.
+  \centering
+  \begin{align*}
+    N_{iQ} \sim \ &\operatorname{NegBin}(\mu_{iQ},\, \phi), \\[0.3cm]
+    \log\left(\frac{\mu_{iQ}}{l_{iQ}}\right)
+    = \ &\beta_{\text{season}(Q)}, \\[0.10cm]
+    \makebox[0.30\linewidth][l]{$\big[$\textit{\scriptsize property}$\big]$}
+    +\ &X_i^{\text{prop.}}\, \beta^{\text{prop.}}
+    + s(\text{build year}_i) + s(\text{tariff}_i), \\[0.1cm]
+    \makebox[0.30\linewidth][l]{$\big[$\textit{\scriptsize topography}$\big]$}
+    +\ &s(\text{TWI}_i)
+    + s(\text{HAND}_i)
+    + X_i^{\text{land use}}\, \beta^{\text{land use}}, \\[0.1cm]
+    \makebox[0.30\linewidth][l]{$\big[$\textit{\scriptsize region}$\big]$}
+    +\ &X_i^{\text{county}}\, \beta^{\text{county}}
+    + X_i^{\text{munic.}}\, \beta^{\text{munic.}}_{\text{land use}}, \\[0.1cm]
+    \makebox[0.30\linewidth][l]{$\big[$\textit{\scriptsize
+    precipitation}$\big]$}
+    +\ &s(\text{absolute precip}_{iQ})
+    + s(\text{relative precip}_{iQ}).
+  \end{align*}
+  %   \vspace{0.3cm}
+\end{frame}
+
+\begin{frame}{Claim payment model structure:}
+  $U_{iQ}$: payout for a claim on contract $i$ in year-season $Q$.
+  \centering
+  \begin{align*}
+    U_{iQ} \sim \ &\operatorname{Gamma}(\xi_{iQ},\, \nu), \\[0.3cm]
+    \log(\xi_{iQ})
+    = \ &\beta_{\text{season}(Q)}, \\[0.10cm]
+    \makebox[0.30\linewidth][l]{$\big[$\textit{\scriptsize property}$\big]$}
+    +\ &X_i^{\text{prop.}}\, \beta^{\text{prop.}}
+    + s(\text{build year}_i)
+    + \beta^{\text{prop.\ type}}_{\text{tariff}} \cdot \text{tariff}_i,
+    \\[0.1cm]
+    \makebox[0.30\linewidth][l]{$\big[$\textit{\scriptsize topography}$\big]$}
+    +\ &s(\text{TWI}_i)
+    + X_i^{\text{land use}}\, \beta^{\text{land use}}, \\[0.1cm]
+    \makebox[0.30\linewidth][l]{$\big[$\textit{\scriptsize region}$\big]$}
+    +\ &X_i^{\text{county}}\, \beta^{\text{county}}
+    + X_i^{\text{munic.}}\, \beta^{\text{munic.}}_{\text{land use}},
+    \\[0.1cm]
+    \makebox[0.30\linewidth][l]{$\big[$\textit{\scriptsize
+    precipitation}$\big]$}
+    +\ &s(\text{absolute precip}_{iQ})
+    + s(\text{relative precip}_{iQ}).
+  \end{align*}
+\end{frame}
