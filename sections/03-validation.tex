@@ -29,14 +29,15 @@
   \sourceNote{Rolling block cross-validation, Gjensidige 2010--2025}
 \end{frame}
 
-\begin{frame}{Yearly frequency+payment cross validation performance}
+\begin{frame}{Total damages yearly cross validation performance}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.33\textwidth}
-      \vspace{0.5cm}
+      \vspace{0.4cm}
       \begin{itemize}
         \item Broadly well aligned
         \item Substantial yearly errors
         \item Underestimates uncertainty
+        \item Full period, 50 draws:  $-5.18 \pm 0.94 \%$ error.
           % \item No comparable ``Hans year'' when 2023 is held out
       \end{itemize}
       \vspace{1em}
@@ -44,10 +45,15 @@
       individual-year prediction.
     \end{column}
     \begin{column}{0.65\textwidth}
-      \vspace{0.5cm}
+      \vspace{0.4cm}
       % Replace with the English-labelled plot using the same filename.
       \includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{images/joint_claim_payments_cross_validation.png}
     \end{column}
   \end{columns}
   \sourceNote{Yearly cross-validation; annual payouts normalised by period mean}
 \end{frame}
+
+% 50 simulation draws: Full observation period percent total payment error:
+% kind     mean_payment_error_percent sd_payment_error_percent
+% capped                   -4.283260                      0.95
+% raw                      -5.178414                      0.94
