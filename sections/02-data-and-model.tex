@@ -25,10 +25,13 @@
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.52\textwidth}
       \begin{itemize}
-        \item \textbf{Weather:} daily seNorge precipitation and temperature on a 1 km grid
-        \item \textbf{Terrain:} topographic wetness index and height above nearest drainage
+        \item \textbf{Weather:} daily seNorge precipitation and
+          temperature on a 1 km grid
+        \item \textbf{Terrain:} topographic wetness index and height
+          above nearest drainage
         \item \textbf{Surface:} built-up versus non-built-up AR50 class
-        \item \textbf{Building:} type, age, insured value, basement, standard and use
+        \item \textbf{Building:} type, age, insured value, basement,
+          standard and use
         \item \textbf{Region:} municipality and county effects
       \end{itemize}
     \end{column}
@@ -74,18 +77,22 @@
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.53\textwidth}
       \begin{itemize}
-        \item \textbf{Claim frequency:} negative-binomial GAM for claims per insured exposure day
-        \item \textbf{Cost per claim:} gamma GAM for payout conditional on a claim
-        \item Both models use building, terrain, regional and precipitation covariates
-        \item Simulated counts and severities are summed over buildings and seasons
+        \item \textbf{Claim frequency:} negative-binomial GAM for
+          claims per insured exposure day
+        \item \textbf{Cost per claim:} gamma GAM for payout
+          conditional on a claim
+        \item Both models use building, terrain, regional and
+          precipitation covariates
+        \item Simulated counts and severities are summed over
+          buildings and seasons
       \end{itemize}
     \end{column}
     \begin{column}{0.42\textwidth}
       \vspace{0.7cm}
       \begin{align*}
         \text{total cost}
-          &= \sum_{i,Q}\sum_{k=1}^{N_{iQ}}
-             \left(A_i + U_{iQ}^{k}\right),\\[0.4cm]
+        &= \sum_{i,Q}\sum_{k=1}^{N_{iQ}}
+        \left(A_i + U_{iQ}^{k}\right),\\[0.4cm]
         N_{iQ} &\sim \operatorname{NegBin},\\
         U_{iQ}^{k} &\sim \operatorname{Gamma}.
       \end{align*}
@@ -100,11 +107,13 @@
       \begin{enumerate}
         \item \textbf{Absolute intensity}
           \begin{itemize}
-            \item Mean precipitation across the three wettest days in a year-season
+            \item Mean precipitation across the three wettest days in
+              a year-season
           \end{itemize}
         \item \textbf{Relative anomaly}
           \begin{itemize}
-            \item Extreme-season rainfall relative to the local 95th percentile of daily precipitation
+            \item Extreme-season rainfall relative to the local 95th
+              percentile of daily precipitation
           \end{itemize}
       \end{enumerate}
     \end{column}
@@ -112,7 +121,8 @@
       \textbf{Interpretation}
       \begin{itemize}
         \item Damage requires sufficient water in absolute terms
-        \item Local adaptation makes departures from normal conditions informative
+        \item Local adaptation makes departures from normal
+          conditions informative
       \end{itemize}
 
       Candidate indices were evaluated on unseen observations.
@@ -121,22 +131,45 @@
   \sourceNote{Precipitation-index selection in the frequency model}
 \end{frame}
 
-\begin{frame}{The same rainfall can mean different risk}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.38\textwidth}
-      \begin{itemize}
-        \item Dry-climate locations respond more steeply than wet-climate locations
-        \item At 40 mm, expected frequency is about nine times the dry-season reference in the driest context
-        \item The comparable increase is about threefold in wetter contexts
-        \item Effects on cost per claim are smaller
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.59\textwidth}
-      % Replace with English-labelled plots using the same filenames.
-      \centering
-      \includegraphics[width=0.88\linewidth,height=0.27\textheight,keepaspectratio]{images/precipitation-frequency.png}\\[-0.05cm]
-      \includegraphics[width=0.88\linewidth,height=0.27\textheight,keepaspectratio]{images/precipitation-severity.png}
-    \end{column}
-  \end{columns}
-  \sourceNote{Combined marginal precipitation effects from the fitted models}
+% \begin{frame}{The same rainfall can mean different risk}
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.38\textwidth}
+%       \begin{itemize}
+%         \item Dry-climate locations respond more steeply than
+%           wet-climate locations
+%         \item At 40 mm, expected frequency is about nine times the
+%           dry-season reference in the driest context
+%         \item The comparable increase is about threefold in wetter contexts
+%         \item Effects on cost per claim are smaller
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.59\textwidth}
+%       % Replace with English-labelled plots using the same filenames.
+%       \centering
+%       \includegraphics[width=0.88\linewidth,height=0.27\textheight,keepaspectratio]{images/precipitation-frequency.png}\\[-0.05cm]
+%       \includegraphics[width=0.88\linewidth,height=0.27\textheight,keepaspectratio]{images/precipitation-severity.png}
+%     \end{column}
+%   \end{columns}
+%   \sourceNote{Combined marginal precipitation effects from the fitted models}
+% \end{frame}
+
+\begin{frame}{Precipitation effect on claim frequency}
+  \centering
+  \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio,trim={0
+  0 0 26},clip]{
+  images/model_effects/claim_incidence_combined_precipitation_effect_simple_presentation.png}
+\end{frame}
+
+\begin{frame}{Precipitation effect on claim frequency}
+  \centering
+  \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio,trim={0
+  0 0 26},clip]{
+  images/model_effects/claim_incidence_combined_precipitation_effect_presentation_version.png}
+\end{frame}
+
+\begin{frame}{Precipitation effect on payment per claim}
+  \centering
+  \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio,trim={0
+  0 0 26},clip]{
+  images/model_effects/claim_size_combined_precipitation_effect_presentation_version.png}
 \end{frame}

@@ -31,7 +31,7 @@
 %   \end{columns}
 %   \sourceNote{Norwegian Climate Service Centre projections released in 2025}
 % \end{frame}
-\begin{frame}{Change the climate, hold buildings fixed}
+\begin{frame}{Change the climate, hold building portfolio fixed}
   \vspace{0.5cm}
   \centering
   \begin{tikzpicture}[
@@ -58,6 +58,41 @@
   \vspace{0.15cm}
   = 200 relative cost changes per scenario, horizon, and geography
   \sourceNote{Norwegian Climate Service Centre projections released in 2025}
+\end{frame}
+
+\begin{frame}{Estimated changes in total damages:}
+  \captionsetup{labelformat=empty}
+  \begin{table}
+    \centering
+    \small
+    \setlength{\tabcolsep}{7pt}
+    \renewcommand{\arraystretch}{1.45}
+    \makebox[\linewidth][c]{
+      \begin{tabular}{llccc}
+        \shortstack{\textbf{Future} \\ \textbf{period}} &
+        \shortstack{\textbf{Emissions} \\ \textbf{scenario}} &
+        \shortstack{\textbf{Lower} \\ \textbf{quartile}} &
+        \textcolor{accent1}{\textbf{Median}} &
+        \shortstack{\textbf{Upper} \\ \textbf{quartile}} \\
+        \hline
+        2041--2070 & Low & \(7.1\%\) &
+        \textcolor{accent1}{\(\mathbf{9.5\%}\)} & \(17.5\%\) \\
+        & Intermediate & \(10.2\%\) &
+        \textcolor{accent1}{\(\mathbf{14.9\%}\)} & \(22.9\%\) \\
+        & High & \(11.1\%\) &
+        \textcolor{accent1}{\(\mathbf{18.3\%}\)} & \(22.8\%\) \\
+        \hline
+        2071--2100 & Low & \(6.4\%\) &
+        \textcolor{accent1}{\(\mathbf{9.9\%}\)} & \(18.0\%\) \\
+        & Intermediate & \(14.7\%\) &
+        \textcolor{accent1}{\(\mathbf{23.4\%}\)} & \(30.6\%\) \\
+        & High & \(17.0\%\) &
+        \textcolor{accent1}{\(\mathbf{33.2\%}\)} & \(41.6\%\) \\
+        \hline
+    \end{tabular}}
+    \caption{Percent changes in total damages, across all of Norway.}
+    \label{tab:national_changes}
+  \end{table}
 \end{frame}
 
 \begin{frame}{National costs rise in every scenario}

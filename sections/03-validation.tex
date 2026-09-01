@@ -29,25 +29,25 @@
   \sourceNote{Rolling block cross-validation, Gjensidige 2010--2025}
 \end{frame}
 
-\begin{frame}{The model tracks the trend, not every extreme year}
+\begin{frame}{Yearly frequency+payment cross validation performance}
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.38\textwidth}
+    \begin{column}{0.33\textwidth}
+      \vspace{0.5cm}
       \begin{itemize}
-        \item Broad rises and falls are captured
-        \item Some individual years have substantial level errors
-        \item The 2023 prediction is almost one period mean below the
-          observation
-        \item No comparable ``Hans year'' remains when 2023 is held out
+        \item Broadly well aligned
+        \item Substantial yearly errors
+        \item Underestimates uncertainty
+          % \item No comparable ``Hans year'' when 2023 is held out
       \end{itemize}
-
+      \vspace{1em}
       \textbf{Intended use:} long-period aggregate change, not
       individual-year prediction.
     \end{column}
-    \begin{column}{0.59\textwidth}
+    \begin{column}{0.65\textwidth}
+      \vspace{0.5cm}
       % Replace with the English-labelled plot using the same filename.
-      \includegraphics[width=\linewidth,height=0.50\textheight,keepaspectratio]{images/cross-validation.png}
+      \includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{images/joint_claim_payments_cross_validation.png}
     \end{column}
   \end{columns}
-  \sourceNote{Four-year rolling cross-validation; annual payouts
-  normalised by exposure}
+  \sourceNote{Yearly cross-validation; annual payouts normalised by period mean}
 \end{frame}

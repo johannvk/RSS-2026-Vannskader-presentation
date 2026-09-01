@@ -1,4 +1,4 @@
 build/
 
 # *.pdf
-*.png
+images/png_claim_simulations/*.png
