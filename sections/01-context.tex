@@ -2,17 +2,17 @@
 
 \begin{frame}{Extreme precipitation event: Hans, 2023}
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.35\textwidth}
+    \begin{column}{0.45\textwidth}
       \vspace{0.5cm}
       \begin{itemize}
         \item Extreme rainfall over Norway, August 2023
           % \item National precipitation was 45\% above the August normal
         \item 100+ local precipitation records
         \item Extreme-weather warnings: precipitation, flooding, landslides
-        \item Significant pluvial, and river-flooding, damages
+        \item Significant damages on infrastructure and private property
       \end{itemize}
     \end{column}
-    \hspace{0.1cm}
+    \hspace{0.15cm}
     \begin{column}{0.55\textwidth}
       % Replace with an English-labelled or licensed version when available.
       \includegraphics[width=\linewidth,height=0.7\textheight,keepaspectratio]{images/storm-hans.png}
@@ -21,59 +21,101 @@
   \sourceNote{Norwegian Meteorological Institute (2023)}
 \end{frame}
 
-\begin{frame}{The hazard we model is not river flooding}
+\begin{frame}{Contents}
+  \begin{enumerate}
+    \item Motivation: Expert Committee on Climate Adaptation
+    \item Input data and model
+    \item Model development
+    \item Damage costs in a future climate
+    \item Conclusions
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{\emph{Expert Committee on Climate Adaptation} (ECoCA)}
+  \begin{itemize}
+    \item Appointed by the Norwegian government, July 2024
+    \item Tasked with assessing the socio-economic costs of climate change
+      in Norway
+    \item Concluding report presented to the Minister of Climate and
+      Environment, June 2026
+  \end{itemize}
+  \vspace{0.2cm}
+  Our role:
+  \begin{itemize}
+    \item Pluvial flooding important part of Norway's
+      weather/climate-related damages
+      % \item Our earlier model summarised the climate over full 30-year
+      %   periods
+    \item Earlier we've modeled pluvial flooding using
+      long-term climate averages
+    \item Task: Estimate changes in pluvial flooding damages
+      due to climate change
+  \end{itemize}
+  % \sourceNote{Expert Committee on Climate Adaptation}
+\end{frame}
+
+% \item The committee wanted finer time resolution % To better
+% resolve high intensity rainfall events (e.g. Hans 2023 as
+% opposed to long-term averages)
+\begin{frame}{Focus: Pluvial water damages}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.53\textwidth}
-      \textbf{Included: pluvial water damage}
+      % \textbf{Project focus: pluvial water damage}
       \begin{itemize}
-        \item Rain or snowmelt entering from outside
-        \item Sewer backflow from overloaded drainage
-        \item Water entering through the building envelope
+        \item Caused by rain or snowmelt
+        \item Water entering buildings from outside
+          % \end{itemize}
+          % \vspace{0.5cm}
+          % \textbf{Excluded: river and lake flooding}
+        \item Excluded: river and lake flooding
+          % \begin{itemize}
+          %   \item Rivers or lakes overtopping their banks
+          %   \item Claims classified as natural-hazard flooding
+          % \end{itemize}
       \end{itemize}
-
-      \textbf{Excluded}
+      % \begin{column}{0.42\textwidth}
+      \vspace{0.2cm}
+      Different mechanisms:
       \begin{itemize}
-        \item Rivers or lakes overtopping their banks
-        \item Claims classified as natural-hazard flooding
+        \item Pluvial flooding: local rainfall, drainage, topography
+        \item River-flooding: upstream flow, channel
+          capacity, floodplain exposure
       \end{itemize}
+      % \end{column}
     \end{column}
     \begin{column}{0.42\textwidth}
-      \textbf{Different mechanisms}
-      \begin{itemize}
-        \item Pluvial risk depends on local rainfall, drainage and
-          the building envelope
-        \item River-flood risk depends on upstream flow, channel
-          capacity and floodplain exposure
-      \end{itemize}
+      \includegraphics[width=\linewidth,height=0.85\textheight,keepaspectratio]{images/illustrations/overvann-m29.jpg}
     \end{column}
   \end{columns}
-  \sourceNote{Gjensidige claims data; Finans Norge (2025)}
+  \plainNote{Photo: Bjørn Lytskjold / NVE}
 \end{frame}
 
-\begin{frame}{Two motivations, one modelling framework}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.57\textwidth}
-      \begin{enumerate}
-        \item \textbf{Climate adaptation}
-          \begin{itemize}
-            \item Quantify changes in expected damage costs
-            \item Compare mid- and late-century horizons
-          \end{itemize}
-        \item \textbf{Insurance insight}
-          \begin{itemize}
-            \item Identify drivers of claim frequency and severity
-            \item Improve the representation of short-duration rainfall
-          \end{itemize}
-      \end{enumerate}
-    \end{column}
-    \begin{column}{0.38\textwidth}
-      \textbf{Common framework}
-      \begin{itemize}
-        \item Building-level risk model
-        \item Relative cost changes
-        \item Building and precipitation effects
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \sourceNote{Norwegian Expert Committee on Climate Adaptation; Gjensidige}
-\end{frame}
+% \begin{frame}{Motivations, one modelling framework}
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.57\textwidth}
+%       \begin{enumerate}
+%         \item \textbf{Climate adaptation}
+%           \begin{itemize}
+%             \item Quantify changes in socio-economic damages
+%             \item Compare mid- and late-century horizons, different
+%               climate scenarios
+%           \end{itemize}
+%         \item \textbf{Insurance insight}
+%           \begin{itemize}
+%             \item Identify drivers of claim frequency and severity
+%             \item Improve the representation of short-duration rainfall
+%           \end{itemize}
+%       \end{enumerate}
+%     \end{column}
+%     \begin{column}{0.38\textwidth}
+%       \textbf{Common framework}
+%       \begin{itemize}
+%         \item Building-level risk model
+%         \item Relative cost changes
+%         \item Building and precipitation effects
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+%   \sourceNote{Norwegian Expert Committee on Climate Adaptation; Gjensidige}
+% \end{frame}
