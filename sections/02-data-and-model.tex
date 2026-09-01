@@ -1,32 +1,44 @@
 % Slides 5--10: data, inherited framework, and precipitation development.
 
-\begin{frame}{Sixteen years of building-level insurance data}
+\begin{frame}{Foundation: Sixteen years of building-level insurance data}
+  \vspace{0.25cm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.40\textwidth}
-      \textbf{The data come from Gjensidige}
+      \textbf{Insurance data from Gjensidige:}
       \begin{itemize}
-        \item One of Norway's largest insurers, with roughly a quarter of
+        \item One of Norway's largest insurers, roughly a quarter of
           the market
-        \item We have modelled their pluvial water damages for years, and
-          published an article on the previous model
-        \item This project is a three-way collaboration: Gjensidige, NR
-          and ECoCA
-      \end{itemize}
-
-      \vspace{0.3cm}
-      Building portfolio, 2010--2025:
-      \begin{itemize}
-        \item Daily claim timing and building-level exposure
-        \item Claims, payouts, deductibles and claim-free periods
-        \item Several residential and commercial building types
-        \item Values inflation adjusted to 2026 NOK
-        % \item Claims below the deductible are not observed
+        \item NR and Gjensidige have long-running collaboration %
+          % TODO: Footnote with this article.
+        \item Three-way collaboration: Gjensidige, NR and ECoCA
       \end{itemize}
     \end{column}
-    % \begin{column}{0.57\textwidth}
-    %   % Replace with the English-labelled plot using the same filename.
-    %   \includegraphics[width=\linewidth,height=0.60\textheight,keepaspectratio]{images/historical-claims.png}
-    % \end{column}
+    \begin{column}{0.57\textwidth}
+      % Replace with the English-labelled plot using the same filename.
+      \includegraphics[width=\linewidth,height=0.60\textheight,keepaspectratio]{images/normalized_claim_frequency_and_payments.png}
+    \end{column}
+  \end{columns}
+  \sourceNote{Gjensidige building portfolio, 2010--2025}
+\end{frame}
+
+
+\begin{frame}{Foundation: Sixteen years of building-level insurance data}
+  \vspace{0.25cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.40\textwidth}
+      \textbf{Insurance portfolio, 2010--2025:}
+      \begin{itemize}
+        \item Daily claim registration and building-level exposure
+        \item Claims, payouts, and deductibles
+        \item Several residential and commercial building types
+        \item Values inflation adjusted to 2026 NOK
+          % NOTE: Claims below the deductible are not observed
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.57\textwidth}
+      % Replace with the English-labelled plot using the same filename.
+      \includegraphics[width=\linewidth,height=0.60\textheight,keepaspectratio]{images/normalized_claim_frequency_and_payments.png}
+    \end{column}
   \end{columns}
   \sourceNote{Gjensidige building portfolio, 2010--2025}
 \end{frame}
