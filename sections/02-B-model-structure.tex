@@ -19,12 +19,12 @@
     \end{column}
     \begin{column}{0.31\textwidth}
       \centering
-      $U_{iQ}^{k}$\\[0.05cm]
+      $P_{iQ}^{k}$\\[0.05cm]
       \footnotesize Payout for claim $k$
     \end{column}
     \begin{column}{0.31\textwidth}
       \centering
-      $A_i$\\[+0.05cm]
+      $D_i$\\[+0.05cm]
       \footnotesize Deductible
     \end{column}
   \end{columns}
@@ -33,8 +33,8 @@
 
   Season-year $Q$ damage for contract $i$\,:
   \begin{equation*}
-    S_{iQ} = \sum_{k=1}^{N_{iQ}} \left(A_i + U_{iQ}^{k}\right),
-    \qquad \sum_{k=1}^{0} \left(A_i + U_{iQ}^{k}\right) = 0.
+    S_{iQ} = \sum_{k=1}^{N_{iQ}} \left(D_i + P_{iQ}^{k}\right),
+    \qquad \sum_{k=1}^{0} \left(D_i + P_{iQ}^{k}\right) = 0.
   \end{equation*}
 
   Total damage $T_{\mathcal{X},\mathcal{T}}$\,:
@@ -110,10 +110,10 @@
 \end{frame}
 
 \begin{frame}{Claim payment model structure}
-  $U_{iQ}$: payout for a claim on contract $i$ in year-season $Q$.
+  $P_{iQ}^k$: payout for claim $k$ on contract $i$ in year-season $Q$.
   \centering
   \begin{align*}
-    U_{iQ} \sim \ &\operatorname{Gamma}(\xi_{iQ},\, \nu), \\[0.3cm]
+    P_{iQ}^k \sim \ &\operatorname{Gamma}(\xi_{iQ},\, \nu), \\[0.3cm]
     \log(\xi_{iQ})
     = \ &\beta_{\text{season}(Q)}, \\[0.10cm]
     \makebox[0.30\linewidth][l]{$\big[$\textit{\scriptsize property}$\big]$}
