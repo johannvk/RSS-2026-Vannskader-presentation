@@ -1,19 +1,70 @@
 
-\begin{frame}{Precipitation effect on claim frequency}
+\begin{frame}{Inference framework: GAMs at scale with \texttt{mgcv}}
+  \small
+  \begin{equation*}
+    g\!\left(\operatorname{E}[Y]\right)
+    = \beta_0 + \sum_j f_j(x_j) + X\beta
+  \end{equation*}
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      % \textbf{Flexible effects}
+      \begin{itemize}
+        \item Allows flexible non-linear effects of covariates
+          \framefootcitecompact{Wood2017}
+        \item Smoothness well estimated from the data
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      % \textbf{Large-data fitting}
+      \begin{itemize}
+        \item \texttt{bam()} designed for large GAMs
+          \framefootcitecompact{Wood2017Giga}
+        \item Enables use of millions of observations
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Yearly cross-validation performance}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.33\textwidth}
+      \vspace{0.4cm}
+      \begin{itemize}
+        \item Broadly well aligned
+        \item Substantial yearly errors
+        \item Underestimates uncertainty
+        \item Full period, 50 draws:  $-5.18 \pm 0.94 \%$ error.
+          % \item No comparable ``Hans year'' when 2023 is held out
+      \end{itemize}
+      \vspace{1em}
+      \textbf{Intended use:} long-period aggregates, not
+      individual-year prediction.
+    \end{column}
+    \begin{column}{0.65\textwidth}
+      \vspace{0.4cm}
+      % Replace with the English-labelled plot using the same filename.
+      \includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{images/joint_claim_payments_cross_validation.png}
+    \end{column}
+  \end{columns}
+  \sourceNote{Yearly cross-validation; annual payouts normalised by period mean}
+\end{frame}
+
+\begin{frame}{Combined precipitation effect - claim frequency}
   \centering
   \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio,trim={0
   0 0 26},clip]{
   images/model_effects/claim_incidence_combined_precipitation_effect_simple_presentation.png}
 \end{frame}
 
-\begin{frame}{Precipitation effect on claim frequency}
+\begin{frame}{Combined precipitation effect - claim frequency}
   \centering
   \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio,trim={0
   0 0 26},clip]{
   images/model_effects/claim_incidence_combined_precipitation_effect_presentation_version.png}
 \end{frame}
 
-\begin{frame}{Precipitation effect on payment per claim}
+\begin{frame}{Combined precipitation effect - claim payment}
   \centering
   \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio,trim={0
   0 0 26},clip]{
