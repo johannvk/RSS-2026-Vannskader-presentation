@@ -1,35 +1,31 @@
 % Slides 11--12: rolling annual cross-validation and interpretation.
+% \begin{frame}{Annual performance is tested out of sample}
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.54\textwidth}
+%       \begin{enumerate}
+%         \item Hold out four consecutive years
+%         \item Fit frequency and severity models on the remaining years
+%         \item Predict aggregate payout for the held-out years
+%         \item Move the holdout block through 2010--2025
+%       \end{enumerate}
+%       Both model components are evaluated together on observations
+%       not used for fitting.
+%     \end{column}
+%     \begin{column}{0.40\textwidth}
+%       \textbf{Example split}
+%       \begin{itemize}
+%         \item 2010--2021: model fitting
+%         \item 2022--2025: held out
+%         \item Output: annual total payout
+%       \end{itemize}
+%       \vspace{0.45cm}
+%       Final projections use models fitted to all 16 years.
+%     \end{column}
+%   \end{columns}
+%   \sourceNote{Rolling block cross-validation, Gjensidige 2010--2025}
+% \end{frame}
 
-\begin{frame}{Annual performance is tested out of sample}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.54\textwidth}
-      \begin{enumerate}
-        \item Hold out four consecutive years
-        \item Fit frequency and severity models on the remaining years
-        \item Predict aggregate payout for the held-out years
-        \item Move the holdout block through 2010--2025
-      \end{enumerate}
-
-      Both model components are evaluated together on observations
-      not used for fitting.
-    \end{column}
-    \begin{column}{0.40\textwidth}
-      \textbf{Example split}
-
-      \begin{itemize}
-        \item 2010--2021: model fitting
-        \item 2022--2025: held out
-        \item Output: annual total payout
-      \end{itemize}
-
-      \vspace{0.45cm}
-      Final projections use models fitted to all 16 years.
-    \end{column}
-  \end{columns}
-  \sourceNote{Rolling block cross-validation, Gjensidige 2010--2025}
-\end{frame}
-
-\begin{frame}{Total damages yearly cross validation performance}
+\begin{frame}{Yearly cross-validation performance}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.33\textwidth}
       \vspace{0.4cm}
@@ -41,7 +37,7 @@
           % \item No comparable ``Hans year'' when 2023 is held out
       \end{itemize}
       \vspace{1em}
-      \textbf{Intended use:} long-period aggregate change, not
+      \textbf{Intended use:} long-period aggregates, not
       individual-year prediction.
     \end{column}
     \begin{column}{0.65\textwidth}

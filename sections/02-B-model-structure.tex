@@ -6,7 +6,83 @@
 % Final decision was a balance of predictive performance, model complexity, and
 % interpretability (important for the climate impact simulation use-case).
 
-\begin{frame}{Claim frequency model structure:}
+\begin{frame}{Total Damages Definition}
+  \small
+  \textit{Contract $i$, year-season $Q$ (e.g. Winter-2023):}
+  \vspace{0.15cm}
+
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.31\textwidth}
+      \centering
+      $N_{iQ}$\\[+0.05cm]
+      \footnotesize Number of claims
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \centering
+      $U_{iQ}^{k}$\\[0.05cm]
+      \footnotesize Payout for claim $k$
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \centering
+      $A_i$\\[+0.05cm]
+      \footnotesize Deductible
+    \end{column}
+  \end{columns}
+
+  \vspace{0.25cm}
+
+  Season-year $Q$ damage for contract $i$\,:
+  \begin{equation*}
+    S_{iQ} = \sum_{k=1}^{N_{iQ}} \left(A_i + U_{iQ}^{k}\right),
+    \qquad \sum_{k=1}^{0} \left(A_i + U_{iQ}^{k}\right) = 0.
+  \end{equation*}
+
+  Total damage $T_{\mathcal{X},\mathcal{T}}$\,:
+  contracts collection $\mathcal{X}$, year-seasons collection
+  $\mathcal{T}$\,:
+  \begin{equation*}
+    T_{\mathcal{X},\mathcal{T}}
+    = \sum_{Q \in \mathcal{T}} \sum_{i \in \mathcal{X}} S_{iQ}.
+  \end{equation*}
+
+  % \footnotesize
+  % For example, $\mathcal{X}$ may contain all insured buildings in Vestland,
+  % while $\mathcal{T}$ covers a 30-year period. We compare aggregate damage in
+  % 1991--2020 with 2041--2070 under different CO$_2$ emission scenarios.
+\end{frame}
+
+\begin{frame}{Two precipitation indices survived validation}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.53\textwidth}
+      \begin{enumerate}
+        \item \textbf{Absolute intensity}
+          \begin{itemize}
+            \item Mean precipitation across the three wettest days in
+              a year-season
+          \end{itemize}
+        \item \textbf{Relative anomaly}
+          \begin{itemize}
+            \item Extreme-season rainfall relative to the local 95th
+              percentile of daily precipitation
+          \end{itemize}
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \textbf{Interpretation}
+      \begin{itemize}
+        \item Damage requires sufficient water in absolute terms
+        \item Local adaptation makes departures from normal
+          conditions informative
+      \end{itemize}
+
+      Candidate indices were evaluated on unseen observations.
+    \end{column}
+  \end{columns}
+  \sourceNote{Precipitation-index selection in the frequency model}
+\end{frame}
+
+
+\begin{frame}{Claim frequency model structure}
   %   \vspace{0.0cm}
   $N_{iQ}$: number of claims on contract $i$ in year-season $Q$;
   $l_{iQ}$: insured days that season.
@@ -33,7 +109,7 @@
   %   \vspace{0.3cm}
 \end{frame}
 
-\begin{frame}{Claim payment model structure:}
+\begin{frame}{Claim payment model structure}
   $U_{iQ}$: payout for a claim on contract $i$ in year-season $Q$.
   \centering
   \begin{align*}

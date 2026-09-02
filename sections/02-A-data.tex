@@ -1,16 +1,16 @@
 % Slides 5--10: data, inherited framework, and precipitation development.
 
-\begin{frame}{Foundation: Sixteen years of building-level insurance data}
+\begin{frame}{Sixteen years of building-level insurance data}
   \vspace{0.25cm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.40\textwidth}
-      \textbf{Insurance data from Gjensidige:}
+      \textbf{Insurance data from Gjensidige}
       \begin{itemize}
         \item One of Norway's largest insurers, roughly a quarter of
           the market
-        \item NR and Gjensidige have long-running collaboration %
+        \item NR and Gjensidige long-running relationship %
           % TODO: Footnote with this article.
-        \item Three-way collaboration: Gjensidige, NR and ECoCA
+        \item Three-way collaboration: Gjensidige, NR, and ECoCA
       \end{itemize}
     \end{column}
     \begin{column}{0.57\textwidth}
@@ -22,7 +22,7 @@
 \end{frame}
 
 
-\begin{frame}{Foundation: Sixteen years of building-level insurance data}
+\begin{frame}{Sixteen years of building-level insurance data}
   \vspace{0.25cm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.40\textwidth}
@@ -30,9 +30,9 @@
       \begin{itemize}
         \item Daily claim registration and building-level exposure
         \item Claims, payouts, and deductibles
+        \item On the order of 200k contracts, and 40k claims
         \item Several residential and commercial building types
           % \item Values inflation adjusted to 2026 NOK
-        \item On the order of 200k contracts, and 40k claims
           % NOTE: Claims below the deductible are not observed
       \end{itemize}
     \end{column}
@@ -96,63 +96,33 @@
   \sourceNote{Heinrich and Mertsching (2023); current model development}
 \end{frame}
 
-\begin{frame}{Total cost = how often $\times$ how costly}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.53\textwidth}
-      \begin{itemize}
-        \item \textbf{Claim frequency:} negative-binomial GAM for
-          claims per insured exposure day
-        \item \textbf{Cost per claim:} gamma GAM for payout
-          conditional on a claim
-        \item Both models use building, terrain, regional and
-          precipitation covariates
-        \item Simulated counts and severities are summed over
-          buildings and seasons
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.42\textwidth}
-      \vspace{0.7cm}
-      \begin{align*}
-        \text{total cost}
-        &= \sum_{i,Q}\sum_{k=1}^{N_{iQ}}
-        \left(A_i + U_{iQ}^{k}\right),\\[0.4cm]
-        N_{iQ} &\sim \operatorname{NegBin},\\
-        U_{iQ}^{k} &\sim \operatorname{Gamma}.
-      \end{align*}
-    \end{column}
-  \end{columns}
-  \sourceNote{Frequency--severity model for aggregate damage cost}
-\end{frame}
-
-\begin{frame}{Two precipitation indices survived validation}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.53\textwidth}
-      \begin{enumerate}
-        \item \textbf{Absolute intensity}
-          \begin{itemize}
-            \item Mean precipitation across the three wettest days in
-              a year-season
-          \end{itemize}
-        \item \textbf{Relative anomaly}
-          \begin{itemize}
-            \item Extreme-season rainfall relative to the local 95th
-              percentile of daily precipitation
-          \end{itemize}
-      \end{enumerate}
-    \end{column}
-    \begin{column}{0.42\textwidth}
-      \textbf{Interpretation}
-      \begin{itemize}
-        \item Damage requires sufficient water in absolute terms
-        \item Local adaptation makes departures from normal
-          conditions informative
-      \end{itemize}
-
-      Candidate indices were evaluated on unseen observations.
-    \end{column}
-  \end{columns}
-  \sourceNote{Precipitation-index selection in the frequency model}
-\end{frame}
+% \begin{frame}{Total cost = how often $\times$ how costly}
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.53\textwidth}
+%       \begin{itemize}
+%         \item \textbf{Claim frequency:} negative-binomial GAM for
+%           claims per insured exposure day
+%         \item \textbf{Cost per claim:} gamma GAM for payout
+%           conditional on a claim
+%         \item Both models use building, terrain, regional and
+%           precipitation covariates
+%         \item Simulated counts and severities are summed over
+%           buildings and seasons
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.42\textwidth}
+%       \vspace{0.7cm}
+%       \begin{align*}
+%         \text{total cost}
+%         &= \sum_{i,Q}\sum_{k=1}^{N_{iQ}}
+%         \left(A_i + U_{iQ}^{k}\right),\\[0.4cm]
+%         N_{iQ} &\sim \operatorname{NegBin},\\
+%         U_{iQ}^{k} &\sim \operatorname{Gamma}.
+%       \end{align*}
+%     \end{column}
+%   \end{columns}
+%   \sourceNote{Frequency--severity model for aggregate damage cost}
+% \end{frame}
 
 % \begin{frame}{The same rainfall can mean different risk}
 %   \begin{columns}[T,onlytextwidth]
