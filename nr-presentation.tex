@@ -21,9 +21,21 @@
   \footnote[frame]{\citeauthor{#1} (\citeyear{#1}): \citetitle{#1}.}
 }
 
-% Lift footnotes off the bottom edge of the slide: the footline is
-% typeset below the footnote block, so adding space there raises it.
-\addtobeamertemplate{footline}{}{\vspace{1.2em}}
+\newif\ifshowframenumber
+\showframenumberfalse
+\setbeamertemplate{footline}{%
+  \leavevmode
+  \hbox{%
+    \begin{beamercolorbox}[
+      wd=\dimexpr\paperwidth-0.525cm\relax,ht=1.2em,dp=0.46em,right
+    ]{page number in head/foot}%
+      \ifshowframenumber
+        \usebeamerfont{page number in head/foot}%
+        \insertframenumber
+      \fi
+    \end{beamercolorbox}%
+  }%
+}
 
 % Use the same font as the Powerpoint template. To get better
 % consistency with math, consider using Fira Math with LuaTeX (allows
@@ -53,12 +65,6 @@
 }
 
 \setbeamertemplate{frametitle}{\vspace*{0.8cm}\hspace*{0cm}\insertframetitle}
-\addtobeamertemplate{navigation symbols}{}{
-  \usebeamerfont{footline}%
-  \usebeamercolor[fg]{footline}%
-  \hspace{1em}%
-  %    \insertframenumber
-}
 \setlength{\parskip}{0.12cm}
 %  \setlist[itemize]{itemsep=0.3em, topsep=0.2em}
 %\setlength{\pltopsep}{0.5em}     % space above/below the list
