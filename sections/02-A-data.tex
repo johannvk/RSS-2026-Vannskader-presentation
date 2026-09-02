@@ -21,7 +21,6 @@
   \sourceNote{Gjensidige building portfolio, 2010--2025}
 \end{frame}
 
-
 \begin{frame}{Sixteen years of building-level insurance data}
   \vspace{0.25cm}
   \begin{columns}[T,onlytextwidth]
@@ -44,34 +43,34 @@
   \sourceNote{Gjensidige building portfolio, 2010--2025}
 \end{frame}
 
-\begin{frame}{Weather, terrain and the built environment}
+\begin{frame}{Extreme precipitation measures}
+  \vspace{0.5cm}
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.52\textwidth}
+    \begin{column}{0.46\textwidth}
+      \textbf{Daily precipitation}
       \begin{itemize}
-        \item \textbf{Weather:} daily seNorge precipitation and
-          temperature on a 1 km grid
-        \item \textbf{Terrain:} topographic wetness index and height
-          above nearest drainage
-        \item \textbf{Surface:} built-up versus non-built-up AR50 class
-        \item \textbf{Building:} type, age, insured value, basement,
-          standard and use
-        \item \textbf{Region:} municipality and county effects
+        \item Historical seNorge observations on a 1 x 1 km$^2$
+          grid\framefootcitecompact{lussana2020senorgeobservationalgriddeddatasets}
+        \item Climate simulations from the Norwegian Centre for Climate
+          Services\framefootcitecompact{Dyrrdal2025}
+        \item Values linked to each insured building by location
       \end{itemize}
     \end{column}
-    \begin{column}{0.43\textwidth}
-      \textbf{Modelling unit}
-
-      One insured building in one year-season, linked to:
+    \begin{column}{0.49\textwidth}
+      \textbf{Two aggregation scales}
       \begin{itemize}
-        \item local daily weather,
-        \item fixed site characteristics, and
-        \item the current insurance contract.
+        \item \textbf{Season-year:} daily values aggregated into indices
+          measuring extreme precipitation
+        \item \textbf{30-year reference:} local precipitation summaries
+          describing the prevailing climate
       \end{itemize}
+
+      \vspace{0.15cm}
+      \footnotesize
+      Explored: 11 season-year indices, three 30-year reference measures.
     \end{column}
   \end{columns}
-  \sourceNote{seNorge2018; Kartverket; NIBIO AR50; Gjensidige}
 \end{frame}
-
 
 \begin{frame}{Topographic data sources}
   \vspace{-0.1cm}
@@ -89,7 +88,7 @@
       ]{images/data/example_plot_twi.png}
 
       \raisebox{-0.1cm}[0pt][0pt]{%
-      \footnotesize High values: drainage paths and flat areas%
+        \footnotesize High values: drainage paths and flat areas%
       \framefootcitecompact{Mattivi&2019}}
     \end{column}
     \begin{column}{0.49\textwidth}
@@ -104,7 +103,7 @@
         clip
       ]{images/data/example_plot_hand.png}\\
       \raisebox{-0.1cm}[0pt][0pt]{%
-      \footnotesize High values: elevated from drainage%
+        \footnotesize High values: elevated from drainage%
       \framefootcitecompact{Nobre&2011}}
     \end{column}
   \end{columns}
@@ -114,7 +113,6 @@
   \emph{urban} versus \emph{non-urban}%
   \framefootcitecompact{nibio_ar50_docs}
 \end{frame}
-
 
 \begin{frame}{Build on existing risk model}
   \begin{columns}[T,onlytextwidth]
