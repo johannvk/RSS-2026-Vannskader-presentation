@@ -6,6 +6,60 @@
 % Final decision was a balance of predictive performance, model complexity, and
 % interpretability (important for the climate impact simulation use-case).
 
+% TODO: Rework this frame as well.
+% \begin{frame}{Build on existing risk model}
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.49\textwidth}
+%       \textbf{Retained from earlier work}
+%       \begin{itemize}
+%         \item Generalised additive models
+%         \item Separate frequency and severity models
+%         \item Building and topographic predictors
+%         \item Regional effects
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.47\textwidth}
+%       \textbf{Revised or new}
+%       \begin{itemize}
+%         \item Year-season precipitation indices
+%         \item Explicit focus on short-duration rainfall
+%         \item Updated 2024 regional structure
+%         \item Municipality-specific urban/rural effects
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+%   \sourceNote{Heinrich and Mertsching (2023); current model development}
+% \end{frame}
+% TODO: Rework this frame.
+% \begin{frame}{Two precipitation indices survived validation}
+%   \begin{columns}[T,onlytextwidth]
+%     \begin{column}{0.53\textwidth}
+%       \begin{enumerate}
+%         \item \textbf{Absolute intensity}
+%           \begin{itemize}
+%             \item Mean precipitation across the three wettest days in
+%               a year-season
+%           \end{itemize}
+%         \item \textbf{Relative anomaly}
+%           \begin{itemize}
+%             \item Extreme-season rainfall relative to the local 95th
+%               percentile of daily precipitation
+%           \end{itemize}
+%       \end{enumerate}
+%     \end{column}
+%     \begin{column}{0.42\textwidth}
+%       \textbf{Interpretation}
+%       \begin{itemize}
+%         \item Damage requires sufficient water in absolute terms
+%         \item Local adaptation makes departures from normal
+%           conditions informative
+%       \end{itemize}
+%       Candidate indices were evaluated on unseen observations.
+%     \end{column}
+%   \end{columns}
+%   \sourceNote{Precipitation-index selection in the frequency model}
+% \end{frame}
+
 \begin{frame}{Total Damages Definition}
   \small
   \textit{Contract $i$, season-year $Q$ (e.g. Winter-2023):}
@@ -37,7 +91,7 @@
     \qquad \sum_{k=1}^{0} \left(D_i + P_{iQ}^{k}\right) = 0.
   \end{equation*}
 
-  Total damage $T_{\mathcal{X},\mathcal{T}}$\,:
+  Total damages $T_{\mathcal{X},\mathcal{T}}$\,:
   contracts collection $\mathcal{X}$, year-seasons collection
   $\mathcal{T}$\,:
   \begin{equation*}
@@ -49,62 +103,6 @@
   % For example, $\mathcal{X}$ may contain all insured buildings in Vestland,
   % while $\mathcal{T}$ covers a 30-year period. We compare aggregate damage in
   % 1991--2020 with 2041--2070 under different CO$_2$ emission scenarios.
-\end{frame}
-
-% TODO: Rework this frame as well.
-\begin{frame}{Build on existing risk model}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.49\textwidth}
-      \textbf{Retained from earlier work}
-      \begin{itemize}
-        \item Generalised additive models
-        \item Separate frequency and severity models
-        \item Building and topographic predictors
-        \item Regional effects
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.47\textwidth}
-      \textbf{Revised or new}
-      \begin{itemize}
-        \item Year-season precipitation indices
-        \item Explicit focus on short-duration rainfall
-        \item Updated 2024 regional structure
-        \item Municipality-specific urban/rural effects
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \sourceNote{Heinrich and Mertsching (2023); current model development}
-\end{frame}
-
-% TODO: Rework this frame.
-\begin{frame}{Two precipitation indices survived validation}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.53\textwidth}
-      \begin{enumerate}
-        \item \textbf{Absolute intensity}
-          \begin{itemize}
-            \item Mean precipitation across the three wettest days in
-              a year-season
-          \end{itemize}
-        \item \textbf{Relative anomaly}
-          \begin{itemize}
-            \item Extreme-season rainfall relative to the local 95th
-              percentile of daily precipitation
-          \end{itemize}
-      \end{enumerate}
-    \end{column}
-    \begin{column}{0.42\textwidth}
-      \textbf{Interpretation}
-      \begin{itemize}
-        \item Damage requires sufficient water in absolute terms
-        \item Local adaptation makes departures from normal
-          conditions informative
-      \end{itemize}
-
-      Candidate indices were evaluated on unseen observations.
-    \end{column}
-  \end{columns}
-  \sourceNote{Precipitation-index selection in the frequency model}
 \end{frame}
 
 \begin{frame}{Claim frequency model structure}

@@ -43,35 +43,6 @@
   \sourceNote{Gjensidige building portfolio, 2010--2025}
 \end{frame}
 
-\begin{frame}{Extreme precipitation measures}
-  \vspace{0.5cm}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.46\textwidth}
-      \textbf{Daily precipitation}
-      \begin{itemize}
-        \item Historical seNorge observations on a 1 x 1 km$^2$
-          grid\framefootcitecompact{lussana2020senorgeobservationalgriddeddatasets}
-        \item Climate simulations from the Norwegian Centre for Climate
-          Services\framefootcitecompact{Dyrrdal2025}
-        \item Values linked to each insured building by location
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.49\textwidth}
-      \textbf{Two aggregation scales}
-      \begin{itemize}
-        \item \textbf{Season-year:} daily values aggregated into indices
-          measuring extreme precipitation
-        \item \textbf{30-year reference:} local precipitation summaries
-          describing the prevailing climate
-      \end{itemize}
-
-      \vspace{0.15cm}
-      \footnotesize
-      Constructed 11 season-year indices, three 30-year reference measures.
-    \end{column}
-  \end{columns}
-\end{frame}
-
 \begin{frame}{Topographic data sources}
   \vspace{-0.1cm}
   \begin{columns}[T,onlytextwidth]
@@ -112,4 +83,65 @@
   \textbf{Land use:} reduced to binary categories
   \emph{urban} versus \emph{non-urban}%
   \framefootcitecompact{nibio_ar50_docs}
+\end{frame}
+
+\begin{frame}{Extreme precipitation measures}
+  \vspace{0.5cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.46\textwidth}
+      \textbf{Daily precipitation}
+      \begin{itemize}
+        \item Historical seNorge observations on a 1 x 1 km$^2$
+          grid\framefootcitecompact{lussana2020senorgeobservationalgriddeddatasets}
+        \item Climate simulations from the Norwegian Centre for Climate
+          Services\framefootcitecompact{Dyrrdal2025}
+        \item Values linked to each insured building by location
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \textbf{Two aggregation scales}
+      \begin{itemize}
+        \item \textbf{Season-year:} daily values aggregated into indices
+          measuring extreme precipitation
+        \item \textbf{30-year reference:} local precipitation summaries
+          describing the prevailing climate
+      \end{itemize}
+
+      \vspace{0.15cm}
+      \footnotesize
+      Constructed 11 season-year indices, three 30-year reference measures.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Static climate summaries to seasonal extremes}
+  \vspace{0.5cm}
+  \footnotesize
+  Retain building-level GAM framework:\\
+  Property, topographic, and regional effects similar to those in
+  Heinrich-Mertsching et al.\framefootcitecompact{HeinrichMertsching2023}.
+
+  \vspace{0.5cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.38\textwidth}
+      \textit{Previous model:}
+      \begin{itemize}
+        \item Static climate summaries over a 30-year period
+        \item Mean daily precipitation
+        \item Mean temperature
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.57\textwidth}
+      \textit{This project: season-year extremes}
+      \begin{enumerate}
+        \item \textit{Absolute intensity}\newline
+          Mean of the three wettest daily precipitation totals in each
+          season-year
+        \item \textit{Relative intensity}\newline
+          \textit{Absolute intensity} relative to the local 95th
+          percentile of daily
+          precipitation
+      \end{enumerate}
+    \end{column}
+  \end{columns}
 \end{frame}
