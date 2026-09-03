@@ -54,31 +54,61 @@
   \end{tikzpicture}
 \end{frame}
 
+% \begin{frame}{Change the climate, hold building portfolio fixed}
+%   \vspace{0.5cm}
+%   \centering
+%   \begin{tikzpicture}[
+%       period/.style={draw=accent1,thick,rounded corners=2pt,fill=softgrey,
+%       minimum width=3.4cm,minimum height=1.45cm,text width=3.0cm,align=center},
+%       future/.style={draw=riskred,thick,rounded corners=2pt,fill=white,
+%       minimum width=3.4cm,minimum height=1.45cm,text width=3.0cm,align=center},
+%       arrow/.style={-{Latex[length=3mm]},thick,color=accent1}
+%     ]
+%     \node[period] (base) at (-4.3,0) {\textbf{Reference}\\1991--2020};
+%     \node[future] (mid) at (0,0) {\textbf{Mid-century}\\2041--2070};
+%     \node[future] (late) at (4.3,0) {\textbf{Late century}\\2071--2100};
+%     \draw[arrow] (base) -- (mid);
+%     \draw[arrow] (mid) -- (late);
+%     \node[below=0.5cm of base,align=center] {Same portfolio\\and 2026 prices};
+%     \node[below=0.5cm of mid,align=center] {RCP2.6\\RCP4.5\\SSP3-7.0};
+%     \node[below=0.5cm of late,align=center] {RCP2.6\\RCP4.5\\SSP3-7.0};
+%   \end{tikzpicture}
+%   \vspace{0.45cm}
+%   \textbf{10 climate simulations $\times$ 2 bias adjustments $\times$
+%   10 posterior draws}
+%   \vspace{0.15cm}
+%   = 200 relative cost changes per scenario, horizon, and geography
+%   \sourceNote{Norwegian Climate Service Centre projections released in 2025}
+% \end{frame}
+
 \begin{frame}{Change the climate, hold building portfolio fixed}
-  \vspace{0.5cm}
+  \vspace{0.25cm}
   \centering
   \begin{tikzpicture}[
       period/.style={draw=accent1,thick,rounded corners=2pt,fill=softgrey,
-      minimum width=3.4cm,minimum height=1.45cm,text width=3.0cm,align=center},
+      minimum width=3.6cm,minimum height=1.65cm,text width=3.2cm,align=center},
       future/.style={draw=riskred,thick,rounded corners=2pt,fill=white,
-      minimum width=3.4cm,minimum height=1.45cm,text width=3.0cm,align=center},
+      minimum width=4.0cm,minimum height=1.65cm,text width=3.6cm,align=center},
       arrow/.style={-{Latex[length=3mm]},thick,color=accent1}
     ]
-    \node[period] (base) at (-4.3,0) {\textbf{Reference}\\1991--2020};
-    \node[future] (mid) at (0,0) {\textbf{Mid-century}\\2041--2070};
-    \node[future] (late) at (4.3,0) {\textbf{Late century}\\2071--2100};
-    \draw[arrow] (base) -- (mid);
-    \draw[arrow] (mid) -- (late);
-    \node[below=0.5cm of base,align=center] {Same portfolio\\and 2026 prices};
-    \node[below=0.5cm of mid,align=center] {RCP2.6\\RCP4.5\\SSP3-7.0};
-    \node[below=0.5cm of late,align=center] {RCP2.6\\RCP4.5\\SSP3-7.0};
+    \node[period] (base) at (-3.4,0)
+    {\textbf{Reference}\\1991--2020\\[-0.02cm]
+    {\scriptsize Using 2026 NOK}};
+    \node[future] (mid) at (2.2,1.35)
+    {\textbf{Mid-century}\\2041--2070\\[-0.02cm]
+    {\scriptsize RCP2.6 \enspace RCP4.5 \enspace SSP3-7.0}};
+    \node[future] (late) at (2.2,-1.35)
+    {\textbf{Late century}\\2071--2100\\[-0.02cm]
+    {\scriptsize RCP2.6 \enspace RCP4.5 \enspace SSP3-7.0}};
+    \draw[arrow] (base.east) -- (mid.west);
+    \draw[arrow] (base.east) -- (late.west);
   \end{tikzpicture}
 
-  \vspace{0.45cm}
+  \vspace{0.25cm}
   \textbf{10 climate simulations $\times$ 2 bias adjustments $\times$
   10 posterior draws}
 
-  \vspace{0.15cm}
+  \vspace{0.1cm}
   = 200 relative cost changes per scenario, horizon, and geography
   \sourceNote{Norwegian Climate Service Centre projections released in 2025}
 \end{frame}
